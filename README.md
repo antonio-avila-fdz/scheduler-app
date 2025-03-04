@@ -1,13 +1,13 @@
 # Scheduler App
 
-# Steps to test
+## Steps to test
 
-## Pre requisites
+### Pre requisites
 - PHP 8.4
 - Composer
 - Node.js (for frontend assets)
 
-## Running the app
+### Running the app
 1. Clone the repo on your machine
    ```bash
    git clone <repo-url>
@@ -40,7 +40,7 @@
     1. Visit: http://localhost:8000
     2. View registered users with their timezones and local times.
 
-# Verifying the Scheduled Command
+## Verifying the Scheduled Command
 
 1. Check if the command is scheduled:
 ```bash
@@ -49,7 +49,7 @@ php artisan schedule:list
 The `send:mail` command should appear in the list.
 
 
-# Manually Testing the Scheduler
+## Manually Testing the Scheduler
 
 1. Open one terminal instance and run the queue worker:
 ```bash
@@ -70,7 +70,7 @@ cat storage/logs/laravel.log
 ```
 
 
-# Manually Testing the Command
+## Manually Testing the Command
 
 1. Open one terminal instance and run the queue worker:
 ```bash
@@ -84,6 +84,13 @@ php artisan send:mail 9
 ```bash
 cat storage/logs/laravel.log
 ```
+
+## Key files to Review
+- `app/Repositories/UserRepository.php`: Contains the business logic for user queries
+- `app/Console/Commands/SendMailByHour.php`: Artisan command to send mails based on the specified hour
+- `routes/console.php` Contains the scheduler configuration
+- `app/Helpers/helpers.php` Helper function used to get timezones by hour
+
 
 # Notes
 - Mails are logged instead of actually being sent (no external mail service configured).

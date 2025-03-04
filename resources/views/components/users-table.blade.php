@@ -1,19 +1,22 @@
-<div>
-    <!-- Act only according to that maxim whereby you can, at the same time, will that it should become a universal law. - Immanuel Kant -->
-    <h1 class="text-5xl text-center font-bold">Registered users</h1>
-    <div class="my-6">
-        <table class="table-auto">
-            <thead class="border-b-gray-100 border-2">
-                <th>Email</th>
-                <th>Timezone</th>
-                <th>Local Time</th>
+<div class="mx-auto">
+    <h1 class="text-3xl text-center font-bold mb-2">
+        Registered Users
+    </h1>
+    <div class="overflow-x-auto rounded-lg border border-gray-200">
+        <table class="table-auto text-left border-collapse bg-white dark:bg-black ">
+            <thead class="bg-indigo-600">
+                <tr>
+                    <th class="p-1 font-semibold">Email</th>
+                    <th class="p-1 font-semibold">Timezone</th>
+                    <th class="p-1 font-semibold">Local Time</th>
+                </tr>
             </thead>
             <tbody>
                 @foreach ($users as $user)
-                <tr>
-                    <td>{{ $user->email }}</td>
-                    <td>{{ $user->timezone }}</td>
-                    <td>
+                <tr class="hover:bg-indigo-100 dark:hover:bg-gray-500 transition">
+                    <td class="p-1 border-b border-gray-200">{{ $user->email }}</td>
+                    <td class="p-1 border-b border-gray-200">{{ $user->timezone }}</td>
+                    <td class="p-1 border-b border-gray-200">
                         {{ Carbon\Carbon::now($user->timezone)->toTimeString() }}
                     </td>
                 </tr>

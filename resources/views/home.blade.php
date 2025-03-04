@@ -4,6 +4,7 @@
 
 @section('content')
     <x-users-table :users="$users" />
+    <x-next-timezones />
 @endsection
 
 @section('footer')

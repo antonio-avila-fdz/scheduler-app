@@ -11,7 +11,7 @@ class UserRepository implements UserRepositoryInterface {
 
     function getAll(): Collection
     {
-        return User::all();
+        return User::orderBy('timezone')->get();
     }
 
     function getByTimezones(array $timezones): Collection

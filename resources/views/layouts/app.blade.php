@@ -19,12 +19,12 @@
             </style>
         @endif
     </head>
-    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] dark:text-white text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center h-screen flex-col">
-        <main class="mb-auto">
+    <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] dark:text-white text-[#1b1b18] flex p-6 h-screen flex-col">
+        <main class="mb-auto flex justify-center items-center flex-col">
             @yield('content')
         </main>
        
-        <footer class="w-screen bottom-0 px-6">
+        <footer class="w-full bottom-0 px-6">
             @yield('footer')
         </footer>
     </body>

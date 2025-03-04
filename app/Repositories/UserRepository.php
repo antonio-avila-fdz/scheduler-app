@@ -2,11 +2,10 @@
 
 namespace App\Repositories;
 
-use App\Repositories\Interfaces\UserRepositoryInterface;
+use App\Contracts\UserRepositoryInterface;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 
 class UserRepository implements UserRepositoryInterface {
 

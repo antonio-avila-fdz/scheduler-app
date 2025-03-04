@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
+use App\Contracts\UserRepositoryInterface;
 use App\Mail\Greetings;
-use App\Repositories\Interfaces\UserRepositoryInterface;
 use Carbon\Carbon;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Database\Eloquent\Collection;
@@ -29,9 +29,9 @@ class EmailUsersAtFive implements ShouldQueue
     /**
      * Execute the job.
      */
-    public function handle(UserRepositoryInterface $userRepository): void
+    public function handle(): void
     {   
-        $this->userRepository = $userRepository;
+        $this->userRepository = app(UserRepositoryInterface::class);
         $timezones = $this->getTimezonesWithSpecificHour(17);
         Log::info($timezones);
         $recipients = $this->getRecipients($timezones);

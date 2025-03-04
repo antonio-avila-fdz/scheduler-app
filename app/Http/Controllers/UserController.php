@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\Interfaces\UserRepositoryInterface;
+use App\Contracts\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\View\View;

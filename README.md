@@ -7,14 +7,15 @@
 - Composer
 
 1. Clone the repo on your machine
-2. Go to the root folder of the repository
+2. Go to the root folder of the repository `cd scheduler-app`
 3. Open shell/cmd and run `composer install`
 4. Run `npm install`
 5. Clone the .env `cp .env.example .env`
 6. Generate the app key `php artisan key:generate`
-7. Run `php artisan migrate:fresh --seed` to create a SQLite db with fake users
-8. Run `composer run dev`
-9. Go to http://localhost:8000
+7. Create a file for the database `touch database/database.sqlite`
+8. Run `php artisan migrate:fresh --seed` to create a SQLite db with fake users
+9. Run `composer run dev`
+10. Go to http://localhost:8000
 
 # Steps to test scheduled command
 

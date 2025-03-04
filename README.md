@@ -6,6 +6,7 @@
 - PHP 8.4
 - Composer
 
+## Running the app
 1. Clone the repo on your machine
 2. Go to the root folder of the repository `cd scheduler-app`
 3. Open shell/cmd and run `composer install`

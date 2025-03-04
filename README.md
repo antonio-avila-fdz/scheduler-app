@@ -17,11 +17,14 @@
 9. Run `composer run dev`
 10. Go to http://localhost:8000
 
-# Steps to test scheduled command
+# Verifying the command is scheduled
 
-1. You can verify some users in the web app with their local times at http://localhost:8000
-2. Open a terminal instance on the root folder of the project
-3. To verify that the command will be run every hour run `php artisan schedule:list` and it should be there
-4. Run in a terminal instance on the root folder `php artisan queue:work`
-5. Run in another terminal instance the mail sending command with an specific hour (24 hour format) e.g: `php artisan send:mail 9`
-6. If a mail was "sent" check the logs in storage/logs/laravel.log for the mail content and details
+1. Open a terminal instance on the root folder of the project
+2. Run `php artisan schedule:list` and it should be there
+
+# Steps to manually test command
+
+1. You can verify some users with their timezones and local times in the web app with their local times at http://localhost:8000
+2. Run in a terminal instance on the root folder `php artisan queue:work`
+3. Run in another terminal instance the mail sending command with an specific hour (24 hour format) e.g: `php artisan send:mail 9`
+4. If a mail was "sent" check the logs in storage/logs/laravel.log for the mail content and details

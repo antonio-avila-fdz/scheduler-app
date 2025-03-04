@@ -32,6 +32,7 @@ class SendMailByHour extends Command
     public function handle(): int
     {
         $hour = $this->argument('hour');
+        $this->info('I will send mails to users in timezones where the current hour is (24 hour format): '.$hour);
 
         $this->userRepository = app(UserRepositoryInterface::class);
         $timezones = getTimeZonesByHour($hour);
@@ -48,7 +49,7 @@ class SendMailByHour extends Command
                 $this->error($e->getMessage());
             }
         } else {
-            $this->info('No mails were sent');
+            $this->info('No recipients available');
         }
 
         return 0;

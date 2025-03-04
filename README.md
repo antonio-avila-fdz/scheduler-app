@@ -49,6 +49,27 @@ php artisan schedule:list
 The `send:mail` command should appear in the list.
 
 
+# Manually Testing the Scheduler
+
+1. Open one terminal instance and run the queue worker:
+```bash
+php artisan queue:work
+```   
+2. In another terminal, run the schedule test command:
+```bash
+php artisan schedule:test
+```
+3. Confirm the send:mail command
+4. Check the schedule logs showing the output of the command
+```bash
+cat storage/logs/schedule.log
+```
+4. Check if emails were "sent" by inspecting the logs
+```bash
+cat storage/logs/laravel.log
+```
+
+
 # Manually Testing the Command
 
 1. Open one terminal instance and run the queue worker:
